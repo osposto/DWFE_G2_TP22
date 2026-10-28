@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import integrantes from '../datos/datosIntegrantes';
 import capacidades from '../datos/capacidades.json';
 import TarjetaIntegrante from '../componentes/integrantes/TarjetaIntegrante';
+import FormularioIncidenteSOC from '../componentes/alternativa/FormularioIncidenteSOC';
 
 export default function PaginaInicio() {
   return (
@@ -63,6 +64,9 @@ export default function PaginaInicio() {
         ))}
       </div>
       <p className="dashboard-footnote">Los datos personales y culturales se completan con información confirmada por cada integrante.</p>
+
+      {/* Canal de Reporte y Contacto SOC (Mejora v2) */}
+      <FormularioIncidenteSOC />
     </div>
   );
 }

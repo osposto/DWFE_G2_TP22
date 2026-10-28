@@ -8,6 +8,7 @@ import PaginaServicios from './paginas/PaginaServicios';
 import PaginaArbol from './paginas/PaginaArbol';
 import PaginaBitacora from './paginas/PaginaBitacora';
 import PaginaNoEncontrada from './paginas/PaginaNoEncontrada';
+import PaginaAlternativa from './paginas/PaginaAlternativa';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="servicios-api" element={<PaginaServicios />} />
           <Route path="arquitectura" element={<PaginaArbol />} />
           <Route path="bitacora" element={<PaginaBitacora />} />
+          <Route path="alternativa" element={<PaginaAlternativa />} />
           <Route path="*" element={<PaginaNoEncontrada />} />
         </Route>
       </Routes>

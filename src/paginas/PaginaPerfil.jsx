@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import integrantes from '../datos/datosIntegrantes';
 import DetalleIntegrante from '../componentes/integrantes/DetalleIntegrante';
+import ConsolaRolInteractiva from '../componentes/alternativa/ConsolaRolInteractiva';
 
 export default function PaginaPerfil() {
   const { id } = useParams();
@@ -51,6 +52,9 @@ export default function PaginaPerfil() {
       </div>
 
       <DetalleIntegrante integrante={integrante} />
+
+      {/* Demostración interactiva de rol en vivo (Mejora v2) */}
+      <ConsolaRolInteractiva integranteId={integrante.id} />
     </div>
   );
 }

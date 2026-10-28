@@ -37,6 +37,13 @@ const opcionesNavegacion = [
     titulo: 'Bitácora',
     descripcionCorta: 'Registro de desarrollo',
     descripcionDetallada: 'Documentación cronológica de hitos, decisiones de arquitectura y resolución de dificultades técnicas estructurada en acordeones interactivos.'
+  },
+  {
+    ruta: '/alternativa',
+    icono: '🧪',
+    titulo: 'Laboratorio',
+    descripcionCorta: 'Propuesta alternativa',
+    descripcionDetallada: 'Espacio de prueba interactivo: simulador de roles por integrante, modo táctico de alto contraste y formulario accesible de reporte.'
   }
 ];
 

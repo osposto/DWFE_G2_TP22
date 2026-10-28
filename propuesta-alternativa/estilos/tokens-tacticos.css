@@ -1,0 +1,67 @@
+/* ==========================================================================
+   TOKENS Y ESTILOS DE MODO TÁCTICO INDUSTRIAL (ALTO CONTRASTE)
+   propuesta-alternativa/estilos/tokens-tacticos.css
+   ========================================================================== */
+
+.barra-modo-tactico {
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-toggle-tactico {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #e2e8f0;
+}
+
+.btn-toggle-tactico:hover {
+  border-color: #00f0ff;
+  color: #00f0ff;
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+}
+
+.btn-toggle-tactico.activo-industrial {
+  background: #fbbf24;
+  color: #000000;
+  border-color: #f59e0b;
+  box-shadow: 0 0 14px rgba(251, 191, 36, 0.5);
+}
+
+/* ==========================================================================
+   REDEFINICIÓN DE TOKENS CUANDO dataset.temaTactico === 'industrial'
+   Simula monitores fósforo ámbar / SCADA industrial de alta visibilidad
+   ========================================================================== */
+html[data-tema-tactico='industrial'] {
+  --color-bg: #000000 !important;
+  --color-bg-strong: #0a0a0a !important;
+  --color-panel: #050505 !important;
+  --color-panel-soft: #080808 !important;
+  --color-panel-strong: #000000 !important;
+  --color-borde: rgba(251, 191, 36, 0.6) !important;
+  --color-borde-strong: #fbbf24 !important;
+  --color-primario: #fbbf24 !important;
+  --color-primario-2: #f59e0b !important;
+  --color-texto: #ffffff !important;
+  --color-texto-suave: #fef08a !important;
+  --focus-ring: #fbbf24 !important;
+}
+
+html[data-tema-tactico='industrial'] body {
+  background: #000000 !important;
+}
+
+html[data-tema-tactico='industrial'] * {
+  backdrop-filter: none !important;
+  text-shadow: none !important;
+}
+

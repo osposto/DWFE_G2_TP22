@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- ============================================================== -->
+    <!-- METADATOS BÁSICOS Y CODIFICACIÓN                               -->
+    <!-- ============================================================== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>200 - OK · Centro de Operaciones y Ciberdefensa | TP2 React</title>
+    <meta
+      name="description"
+      content="200 - OK · Single Page Application (SPA) en React especializada en Ciberseguridad, Ciberdefensa, Sistemas ICS/SCADA y Respuesta ante Incidentes. DWFE Grupo 2."
+    />
+    <meta name="author" content="Orlando Sposto, Adriana Van Den Dooren, Guillermo Escobar" />
+    <meta name="theme-color" content="#050b14" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href="https://dwfe-g2-tp-2.vercel.app/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- ============================================================== -->
+    <!-- REDES SOCIALES Y SOCIAL CARDS (Open Graph & Twitter)            -->
+    <!-- Permite previsualizaciones ricas al compartir el link en chat  -->
+    <!-- ============================================================== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="200 - OK · Ciberdefensa Industrial" />
+    <meta property="og:title" content="200 - OK · Centro de Operaciones y Ciberdefensa | TP2 React" />
+    <meta
+      property="og:description"
+      content="SPA de Ciberdefensa Industrial: catálogo interactivo de 20 capacidades, telemetría asíncrona de APIs y bitácora con Agile Planning Poker."
+    />
+    <meta property="og:url" content="https://dwfe-g2-tp-2.vercel.app/" />
+    <meta property="og:image" content="https://dwfe-g2-tp-2.vercel.app/imagenes/fondo-sitio.jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="200 - OK · Centro de Operaciones y Ciberdefensa" />
+    <meta
+      name="twitter:description"
+      content="SPA de Ciberdefensa Industrial: catálogo interactivo, APIs públicas y arquitectura en React."
+    />
+    <meta name="twitter:image" content="https://dwfe-g2-tp-2.vercel.app/imagenes/fondo-sitio.jpeg" />
+
+    <!-- ============================================================== -->
+    <!-- DATOS ESTRUCTURADOS (SEO ACADÉMICO / SCHEMA.ORG)                -->
+    <!-- ============================================================== -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "200 - OK · Grupo 2",
+        "description": "Estudio de ingeniería y desarrollo frontend especializado en Ciberseguridad y Sistemas de Control Industrial ICS/SCADA.",
+        "url": "https://dwfe-g2-tp-2.vercel.app/",
+        "member": [
+          {
+            "@type": "Person",
+            "name": "Orlando Sposto",
+            "jobTitle": "Arquitectura de Software y Lógica de Datos"
+          },
+          {
+            "@type": "Person",
+            "name": "Adriana Van Den Dooren",
+            "jobTitle": "Diseño UI/UX, Estética y Perfiles de Usuario"
+          },
+          {
+            "@type": "Person",
+            "name": "Guillermo Escobar",
+            "jobTitle": "Integración de APIs Asíncronas, Bitácora y Documentación"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Preconexión y carga de imagen principal con alta prioridad (LCP) -->
+    <link rel="preload" as="image" href="/imagenes/fondo-sitio.jpeg" type="image/jpeg" fetchpriority="high" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+

@@ -22,6 +22,7 @@ export default function FormularioIncidenteSOC() {
   const [tocados, setTocados] = useState({});
   const [enviando, setEnviando] = useState(false);
   const [ticketGenerado, setTicketGenerado] = useState(null);
+  const [errorServidor, setErrorServidor] = useState(null);
 
   // Validación de campos
   const validar = (datos) => {
@@ -108,6 +109,7 @@ export default function FormularioIncidenteSOC() {
         const data = await respuesta.json();
 
         if (respuesta.ok && data.ok) {
+          setErrorServidor(null);
           setTicketGenerado({
             id: data.ticketId,
             operador: data.operador || valores.nombreOperador,
@@ -116,6 +118,10 @@ export default function FormularioIncidenteSOC() {
             sector: data.sector || valores.sectorAfectado,
             hora: data.timestamp || new Date().toLocaleTimeString('es-AR')
           });
+        } else if (respuesta.status === 429) {
+          setErrorServidor(data.error || 'Límite de solicitudes alcanzado. Por seguridad se limitan los envíos por minuto.');
+          setEnviando(false);
+          return;
         } else {
           throw new Error(data.error || 'Fallo al procesar el despacho');
         }
@@ -334,6 +340,28 @@ export default function FormularioIncidenteSOC() {
               )}
             </div>
           </div>
+
+          {errorServidor && (
+            <div
+              style={{
+                background: 'rgba(239, 68, 68, 0.15)',
+                border: '1px solid rgba(239, 68, 68, 0.5)',
+                color: '#fca5a5',
+                padding: '0.85rem 1.1rem',
+                borderRadius: '6px',
+                marginBottom: '1.2rem',
+                fontSize: '0.9rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                lineHeight: '1.5'
+              }}
+              role="alert"
+            >
+              <span style={{ fontSize: '1.2rem' }}>🛡️</span>
+              <span>{errorServidor}</span>
+            </div>
+          )}
 
           <div className="fila-acciones-formulario">
             <button

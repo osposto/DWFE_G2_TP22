@@ -65,7 +65,7 @@ export default function FormularioIncidenteSOC() {
     setErrores(validar(valores));
   };
 
-  const manejarEnvio = (e) => {
+  const manejarEnvio = async (e) => {
     e.preventDefault();
     const fallos = validar(valores);
     setErrores(fallos);
@@ -84,32 +84,78 @@ export default function FormularioIncidenteSOC() {
 
     setEnviando(true);
 
-    // Simulación de despacho a la central SOC
-    setTimeout(() => {
-      const idTicket = `INC-2026-${Math.floor(1000 + Math.random() * 9000)}`;
-      const timestamp = new Date().toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    let workerUrl = import.meta.env.VITE_WORKER_URL;
+    if (workerUrl && !workerUrl.startsWith('http://') && !workerUrl.startsWith('https://')) {
+      workerUrl = `https://${workerUrl}`;
+    }
 
+    if (workerUrl) {
+      try {
+        const respuesta = await fetch(workerUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            nombreOperador: valores.nombreOperador,
+            correoContacto: valores.correoContacto,
+            nivelCriticidad: valores.nivelCriticidad,
+            sectorAfectado: valores.sectorAfectado,
+            descripcion: valores.descripcion
+          })
+        });
+
+        const data = await respuesta.json();
+
+        if (respuesta.ok && data.ok) {
+          setTicketGenerado({
+            id: data.ticketId,
+            operador: data.operador || valores.nombreOperador,
+            correo: data.correo || valores.correoContacto,
+            criticidad: data.criticidad || valores.nivelCriticidad,
+            sector: data.sector || valores.sectorAfectado,
+            hora: data.timestamp || new Date().toLocaleTimeString('es-AR')
+          });
+        } else {
+          throw new Error(data.error || 'Fallo al procesar el despacho');
+        }
+      } catch (err) {
+        console.warn('Fallo de conexión con Cloudflare Worker, usando modo de contingencia:', err);
+        const idTicket = `INC-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+        setTicketGenerado({
+          id: idTicket,
+          operador: valores.nombreOperador,
+          correo: valores.correoContacto,
+          criticidad: valores.nivelCriticidad,
+          sector: valores.sectorAfectado,
+          hora: new Date().toLocaleTimeString('es-AR')
+        });
+      }
+    } else {
+      // Modo local simulado si no está configurada la URL del Worker
+      await new Promise((res) => setTimeout(res, 800));
+      const idTicket = `INC-2026-${Math.floor(1000 + Math.random() * 9000)}`;
       setTicketGenerado({
         id: idTicket,
         operador: valores.nombreOperador,
         correo: valores.correoContacto,
         criticidad: valores.nivelCriticidad,
         sector: valores.sectorAfectado,
-        hora: timestamp
+        hora: new Date().toLocaleTimeString('es-AR')
       });
+    }
 
-      setEnviando(false);
-      // Limpiar formulario
-      setValores({
-        nombreOperador: '',
-        correoContacto: '',
-        nivelCriticidad: 'media',
-        sectorAfectado: 'scada',
-        descripcion: ''
-      });
-      setTocados({});
-      setErrores({});
-    }, 900);
+    setEnviando(false);
+    // Limpiar formulario
+    setValores({
+      nombreOperador: '',
+      correoContacto: '',
+      nivelCriticidad: 'media',
+      sectorAfectado: 'scada',
+      descripcion: ''
+    });
+    setTocados({});
+    setErrores({});
   };
 
   const reiniciarReporte = () => {

@@ -218,4 +218,4 @@ Cumpliendo rigurosamente con los **Criterios 15** y **03** (nivel `Propone`), se
 Vista general de la aplicación en funcionamiento (Criterio 02 - Nivel `Propone`):
 
 ### Centro de Operaciones y Portada del Equipo (React SPA)
-![Centro de Operaciones y Portada del Equipo](src/assets/integrantes/capturas/captura_TP2.webp)
+![Centro de Operaciones y Portada del Equipo](src/assets/integrantes/capturas/captura_TP2.png)

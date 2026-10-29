@@ -40,7 +40,7 @@ Este documento centraliza los requerimientos, la arquitectura de módulos en esp
 Estructura estandarizada con nombres en español para garantizar que los módulos desarrollados por cada integrante se integren de forma directa:
 
 ```text
-DWFE_G2_TP2/
+DWFE_G2_TP22/
 ├── public/
 │   ├── datos/
 │   │   └── capacidades.json             # 20 registros del catálogo técnico

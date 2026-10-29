@@ -23,6 +23,18 @@ const estructuraJerarquica = {
           children: []
         },
         {
+          name: 'BarraModoTactico',
+          tipo: 'ui',
+          icono: '⚡',
+          description: 'Alternador accesible de alto contraste industrial (> 16:1) persistente en localStorage'
+        },
+        {
+          name: 'SkipLinkTactico',
+          tipo: 'ui',
+          icono: '⇥',
+          description: 'Enlace de salto directo al contenido principal para navegación accesible por teclado (WCAG 2.1)'
+        },
+        {
           name: 'Outlet',
           tipo: 'layout',
           icono: '🔀',
@@ -39,6 +51,12 @@ const estructuraJerarquica = {
                   tipo: 'ui',
                   icono: '👤',
                   description: 'Tarjetas individuales de los 3 integrantes con enlace dinámico al perfil'
+                },
+                {
+                  name: 'FormularioIncidenteSOC',
+                  tipo: 'ui',
+                  icono: '📋',
+                  description: 'Canal de reporte y contacto SOC con validación reactiva y generación de tickets'
                 }
               ]
             },
@@ -53,6 +71,12 @@ const estructuraJerarquica = {
                   tipo: 'ui',
                   icono: '📑',
                   description: 'Ficha técnica con selector interactivo de pestañas (Stack, Cultura, TP2)'
+                },
+                {
+                  name: 'ConsolaRolInteractiva',
+                  tipo: 'ui',
+                  icono: '🕹️',
+                  description: 'Demostración de rol en vivo: auditoría de nodos, contraste accesible o sonda de red'
                 }
               ]
             },
@@ -147,6 +171,38 @@ const estructuraJerarquica = {
                   tipo: 'ui',
                   icono: '🪗',
                   description: 'Entradas interactivas desplegables con filtros temáticos por categoría'
+                }
+              ]
+            },
+            {
+              name: 'PaginaSimulaciones',
+              tipo: 'pagina',
+              icono: '🧪',
+              description: 'Consola de simulaciones interactivas, modo táctico y despacho accesible (Ruta: /simulaciones)',
+              children: [
+                {
+                  name: 'ConsolaRolInteractiva',
+                  tipo: 'ui',
+                  icono: '🕹️',
+                  description: 'Simulador funcional de responsabilidades técnicas por integrante (Orlando, Adriana, Guillermo)'
+                },
+                {
+                  name: 'FormularioIncidenteSOC',
+                  tipo: 'ui',
+                  icono: '📋',
+                  description: 'Despacho de incidentes con validación reactiva y generación de tickets accesibles (role="status")'
+                },
+                {
+                  name: 'BarraModoTactico',
+                  tipo: 'ui',
+                  icono: '⚡',
+                  description: 'Alternador accesible de alto contraste industrial (> 16:1) persistente en localStorage'
+                },
+                {
+                  name: 'SkipLinkTactico',
+                  tipo: 'ui',
+                  icono: '⇥',
+                  description: 'Enlace de salto directo al contenido principal para navegación accesible por teclado (WCAG 2.1)'
                 }
               ]
             },

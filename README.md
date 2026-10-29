@@ -2,7 +2,7 @@
 
 Aplicación web Single Page Application (SPA) desarrollada con **React** y **Vite**, que presenta la identidad del equipo de desarrollo, gestiona un catálogo dinámico de capacidades técnicas, integra servicios web externos en tiempo real, incorpora simulación de roles técnicos, despacho de incidentes con tickets accesibles y documenta la arquitectura y bitácora del proyecto.
 
-> **Repositorio Oficial v2:** [https://github.com/osposto/DWFE_G2_TP2_v2](https://github.com/osposto/DWFE_G2_TP22)  
+> **Repositorio Oficial v2:** [https://github.com/osposto/DWFE_G2_TP22](https://github.com/osposto/DWFE_G2_TP22)  
 > **Deploy en Producción (Vercel):** *Listo para desplegar directamente conectando este repositorio en Vercel.*
 
 ---
@@ -27,13 +27,14 @@ El proyecto constituye la evolución del TP1, transformando un sitio web estáti
 
 La propuesta conceptual y gráfica del equipo **200 - OK** se sitúa en el ámbito de la **Ciberseguridad, Ciberdefensa, Sistemas de Control Industrial (ICS/SCADA) y Sistemas Embebidos**, estructurada en torno a una imagen de fondo técnica panorámica (`fondo-sitio.jpeg`) que evoca una consola de mando / SOC (Security Operations Center) con telemetría en tiempo real, alertas de incidentes críticos y vectores de mitigación.
 
-La aplicación se organiza a través de una barra lateral de navegación persistente (**BarraLateral**) y contempla 6 vistas internas principales:
+La aplicación se organiza a través de una barra lateral de navegación persistente (**BarraLateral**) y contempla 7 vistas internas principales:
 - **Portada del Equipo:** Presentación colectiva, métricas dinámicas y accesos a perfiles (`/`).
 - **Perfiles Individuales:** Rutas dinámicas con interacción funcional por pestañas y modales accesibles para cada integrante (`/perfil/:id`).
 - **Catálogo de Capacidades (JSON Local):** 20 competencias técnicas con búsqueda en vivo, filtrado de categorías y detalles desplegables (`/capacidades`).
 - **Servicios API:** Consumo asíncrono de GitHub REST API (con acceso directo al repositorio [`elgyllesoft/pfo1`](https://github.com/elgyllesoft/pfo1) y perfiles del equipo) y Hacker News API con manejo explícito de carga, errores y actualización bajo demanda (`/servicios-api`).
 - **Árbol de Renderizado:** Jerarquía visual interactiva con nodos expandibles y colapsables del código entregado (`/arquitectura`).
 - **Bitácora de Desarrollo:** Registro cronológico estructurado en acordeones colapsables y filtros por categoría/responsable (incluyendo la planificación con **Agile Planning Poker**) para auditar el proceso de trabajo del equipo (`/bitacora`).
+- **Simulaciones Tácticas:** Consola de simulación operativa por rol de integrante, modo táctico industrial de alto contraste y despacho accesible de incidentes (`/simulaciones`).
 
 ---
 
@@ -70,7 +71,7 @@ Para reflejar con claridad el aporte y la autoría de cada miembro en el histori
 ## 🧱 Estructura y Módulos de la Aplicación en Español
 
 ```text
-DWFE_G2_TP2/
+DWFE_G2_TP22/
 ├── public/
 │   ├── datos/
 │   │   └── capacidades.json             # 20 registros del catálogo técnico
@@ -102,9 +103,15 @@ DWFE_G2_TP2/
 │   │   │   ├── PestanaGithub.jsx        # Consumo de GitHub REST API (@elgyllesoft/pfo1 y equipo)
 │   │   │   ├── PestanaHackerNews.jsx    # Consumo de Hacker News API con Promise.all
 │   │   │   └── SeccionServicios.css
-│   │   └── arbol/
-│   │       ├── NodoArbol.jsx            # Nodo interactivo colapsable/expandible
-│   │       └── VistaArbol.css
+│   │   ├── arbol/
+│   │   │   ├── NodoArbol.jsx            # Nodo interactivo colapsable/expandible
+│   │   │   └── VistaArbol.css
+│   │   └── simulaciones/
+│   │       ├── BarraModoTactico.jsx     # Alternador de modo táctico (alto contraste > 16:1)
+│   │       ├── ConsolaRolInteractiva.jsx # Consola reactiva de roles por integrante
+│   │       ├── FormularioIncidenteSOC.jsx # Despacho de incidentes con tickets accesibles
+│   │       ├── SkipLinkTactico.jsx      # Enlace accesible de salto al contenido (WCAG 2.1)
+│   │       └── README.md                # Documentación del módulo de simulaciones
 │   ├── datos/
 │   │   ├── datosIntegrantes.js          # Datos estructurados de los 3 integrantes
 │   │   ├── datosBitacora.js             # 8 hitos cronológicos (incluye Agile Planning Poker)
@@ -115,10 +122,15 @@ DWFE_G2_TP2/
 │   │   ├── PaginaCapacidades.jsx        # Catálogo JSON (/capacidades)
 │   │   ├── PaginaServicios.jsx          # APIs externas (/servicios-api)
 │   │   ├── PaginaArbol.jsx              # Árbol de renderizado (/arquitectura)
-│   │   └── PaginaBitacora.jsx           # Bitácora interactiva con AcordeonBitacora (/bitacora)
+│   │   ├── PaginaBitacora.jsx           # Bitácora interactiva con AcordeonBitacora (/bitacora)
+│   │   ├── PaginaSimulaciones.jsx       # Consola de simulaciones tácticas (/simulaciones)
+│   │   └── PaginaNoEncontrada.jsx       # Vista 404 amigable
 │   ├── estilos/
 │   │   ├── variables.css                # Paleta, fuentes y medidas (:root)
-│   │   └── global.css                   # Resets, layout de portada y perfiles
+│   │   ├── global.css                   # Resets, layout de portada y perfiles
+│   │   ├── tokens-tacticos.css          # Variables de modo táctico industrial
+│   │   ├── consola-rol.css              # Estilos de la consola de roles
+│   │   └── formulario-incidente.css     # Estilos del formulario de incidentes
 │   ├── App.jsx                          # Enrutador central con React Router
 │   └── main.jsx                         # Entrada de React y carga de fuentes locales
 ├── vercel.json                          # Configuración de rewrite para SPA
@@ -180,8 +192,8 @@ Cumpliendo rigurosamente con los **Criterios 15** y **03** (nivel `Propone`), se
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/osposto/DWFE_G2_TP2.git
-   cd DWFE_G2_TP2
+   git clone https://github.com/osposto/DWFE_G2_TP22.git
+   cd DWFE_G2_TP22
    ```
 
 2. **Instalar dependencias:**

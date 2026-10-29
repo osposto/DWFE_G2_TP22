@@ -75,8 +75,8 @@ const integrantes = [
     ciudad: 'San Miguel de Tucumán',
     edad: 57,
     correo: 'adrianavdd.clases@gmail.com',
-    github: '',
-    githubUser: '',
+    github: 'https://github.com/Adriana-vandendooren',
+    githubUser: '@Adriana-vandendooren',
     bio: 'Responsable de la identidad visual, la portada del equipo y los perfiles interactivos de sus integrantes.',
     habilidades: ['HTML', 'CSS', 'Inteligencia artificial', 'Docencia'],
     peliculas: [
@@ -119,8 +119,8 @@ const integrantes = [
     ciudad: 'Merlo, Buenos Aires',
     edad: 43,
     correo: 'gescobar@gmail.com',
-    github: '',
-    githubUser: '',
+    github: 'https://github.com/elgyllesoft',
+    githubUser: '@elgyllesoft',
     bio: 'Responsable de la integración de servicios externos, los estados de carga y error, la bitácora y la documentación.',
     habilidades: ['Redes', 'Electrónica', 'Programación', 'Desarrollo Web'],
     peliculas: [

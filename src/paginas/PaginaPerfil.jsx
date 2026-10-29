@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import integrantes from '../datos/datosIntegrantes';
 import DetalleIntegrante from '../componentes/integrantes/DetalleIntegrante';
-import ConsolaRolInteractiva from '../componentes/alternativa/ConsolaRolInteractiva';
+import ConsolaRolInteractiva from '../componentes/simulaciones/ConsolaRolInteractiva';
 
 export default function PaginaPerfil() {
   const { id } = useParams();
@@ -47,6 +47,12 @@ export default function PaginaPerfil() {
               <dt>Correo</dt>
               <dd><a href={`mailto:${integrante.correo}`}>{integrante.correo}</a></dd>
             </div>
+            {integrante.github && (
+              <div>
+                <dt>GitHub</dt>
+                <dd><a href={integrante.github} target="_blank" rel="noopener noreferrer">{integrante.githubUser || 'Perfil GitHub'}</a></dd>
+              </div>
+            )}
           </dl>
         </div>
       </div>

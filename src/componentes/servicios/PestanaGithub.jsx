@@ -11,7 +11,7 @@ const PERFILES_SUGERIDOS = [
   {
     etiqueta: 'Orlando Sposto (Equipo)',
     usuario: 'osposto',
-    rutaDirecta: 'https://github.com/osposto/DWFE_G2_TP2'
+    rutaDirecta: 'https://github.com/osposto/DWFE_G2_TP22'
   },
   {
     etiqueta: 'Adriana VDD (Equipo)',

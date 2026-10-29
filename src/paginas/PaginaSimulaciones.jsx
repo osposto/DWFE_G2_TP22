@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ConsolaRolInteractiva from '../../propuesta-alternativa/componentes/ConsolaRolInteractiva';
-import FormularioIncidenteSOC from '../../propuesta-alternativa/componentes/FormularioIncidenteSOC';
-import BarraModoTactico from '../../propuesta-alternativa/componentes/BarraModoTactico';
-import SkipLinkTactico from '../../propuesta-alternativa/componentes/SkipLinkTactico';
+import ConsolaRolInteractiva from '../componentes/simulaciones/ConsolaRolInteractiva';
+import FormularioIncidenteSOC from '../componentes/simulaciones/FormularioIncidenteSOC';
+import BarraModoTactico from '../componentes/simulaciones/BarraModoTactico';
+import SkipLinkTactico from '../componentes/simulaciones/SkipLinkTactico';
 
-export default function PaginaAlternativa() {
+export default function PaginaSimulaciones() {
   return (
     <div className="home-shell" style={{ position: 'relative' }}>
       <SkipLinkTactico destinoId="laboratorio-tactico" />
 
-      {/* Barra superior de control del laboratorio */}
+      {/* Barra superior de control de simulaciones */}
       <div style={{
         display: 'flex',
         flexWrap: 'wrap',
@@ -34,10 +34,10 @@ export default function PaginaAlternativa() {
             letterSpacing: '0.08em',
             textTransform: 'uppercase'
           }}>
-            🧪 LABORATORIO TÁCTICO · PROPUESTA ALTERNATIVA
+            🧪 CONSOLA DE SIMULACIONES TÁCTICAS
           </span>
           <h2 style={{ margin: '0.3rem 0 0', fontSize: '1.25rem', color: '#f1f5f9' }}>
-            Nuevos Componentes de Excelencia (Benchmark Grupo 12)
+            Simuladores Operativos y Respuesta Técnica
           </h2>
         </div>
 
@@ -56,12 +56,12 @@ export default function PaginaAlternativa() {
         {/* ============================================================== */}
         <section style={{ marginBottom: '3rem' }}>
           <div style={{ marginBottom: '1rem' }}>
-            <span className="system-overline">MEJORA 1 · INTERACCIÓN TÉCNICA DE ROLES</span>
+            <span className="system-overline">MÓDULO 1 · INTERACCIÓN TÉCNICA DE ROLES</span>
             <h1 style={{ fontSize: '2.1rem', margin: '0.4rem 0', color: 'var(--color-texto)' }}>
               Consola de Operaciones y Demostración por Integrante
             </h1>
             <p style={{ color: 'var(--color-texto-suave)', maxWidth: '820px', lineHeight: '1.6' }}>
-              En lugar de limitarse a mostrar gustos culturales, cada integrante demuestra su responsabilidad técnica en vivo. Podés probar las tres simulaciones reactivas usando los botones de arriba de la consola:
+              Cada integrante demuestra su responsabilidad técnica en vivo. Podés probar las tres simulaciones reactivas usando los botones de arriba de la consola:
             </p>
           </div>
 
@@ -73,7 +73,7 @@ export default function PaginaAlternativa() {
         {/* ============================================================== */}
         <section style={{ marginBottom: '3rem' }}>
           <div style={{ marginBottom: '1rem' }}>
-            <span className="system-overline">MEJORA 2 · CANAL FORMAL Y ACCESIBLE (WCAG)</span>
+            <span className="system-overline">MÓDULO 2 · CANAL FORMAL Y ACCESIBLE (WCAG)</span>
           </div>
 
           <FormularioIncidenteSOC />

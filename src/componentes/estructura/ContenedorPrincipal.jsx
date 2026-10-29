@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import BarraLateral from './BarraLateral';
-import SkipLinkTactico from '../alternativa/SkipLinkTactico';
-import BarraModoTactico from '../alternativa/BarraModoTactico';
+import SkipLinkTactico from '../simulaciones/SkipLinkTactico';
+import BarraModoTactico from '../simulaciones/BarraModoTactico';
 import './ContenedorPrincipal.css';
 
 export default function ContenedorPrincipal() {

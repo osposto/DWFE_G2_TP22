@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import integrantes from '../datos/datosIntegrantes';
 import capacidades from '../datos/capacidades.json';
 import TarjetaIntegrante from '../componentes/integrantes/TarjetaIntegrante';
-import FormularioIncidenteSOC from '../componentes/alternativa/FormularioIncidenteSOC';
+import FormularioIncidenteSOC from '../componentes/simulaciones/FormularioIncidenteSOC';
 
 export default function PaginaInicio() {
   return (

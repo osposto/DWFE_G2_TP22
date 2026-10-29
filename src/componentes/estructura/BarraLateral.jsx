@@ -39,11 +39,11 @@ const opcionesNavegacion = [
     descripcionDetallada: 'Documentación cronológica de hitos, decisiones de arquitectura y resolución de dificultades técnicas estructurada en acordeones interactivos.'
   },
   {
-    ruta: '/alternativa',
+    ruta: '/simulaciones',
     icono: '🧪',
-    titulo: 'Laboratorio',
-    descripcionCorta: 'Propuesta alternativa',
-    descripcionDetallada: 'Espacio de prueba interactivo: simulador de roles por integrante, modo táctico de alto contraste y formulario accesible de reporte.'
+    titulo: 'Simulaciones',
+    descripcionCorta: 'Consola de simulaciones',
+    descripcionDetallada: 'Consola interactiva de simulaciones: auditoría de roles técnicos por integrante, modo táctico de alto contraste y despacho de incidentes.'
   }
 ];
 

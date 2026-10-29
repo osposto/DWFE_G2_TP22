@@ -4,7 +4,7 @@ Aplicación web Single Page Application (SPA) desarrollada con **React** y **Vit
 
 > **Repositorio Oficial v2:** [https://github.com/osposto/DWFE_G2_TP22](https://github.com/osposto/DWFE_G2_TP22)  
 > **Deploy en Producción (Vercel):** [https://dwfe-g2-tp-22.vercel.app](https://dwfe-g2-tp-2.vercel.app)
-
+> Ejecutar desde Vercel para probar el funcionamiento del formulario. Envía el mensaje a una dirección de correo determinada, y devuelve un mail al usuario con la confirmación.
 ---
 
 ## 📑 Índice de Navegación Interna

@@ -3,7 +3,7 @@
 Aplicación web Single Page Application (SPA) desarrollada con **React** y **Vite**, que presenta la identidad del equipo de desarrollo, gestiona un catálogo dinámico de capacidades técnicas, integra servicios web externos en tiempo real, incorpora simulación de roles técnicos, despacho de incidentes con tickets accesibles y documenta la arquitectura y bitácora del proyecto.
 
 > **Repositorio Oficial v2:** [https://github.com/osposto/DWFE_G2_TP22](https://github.com/osposto/DWFE_G2_TP22)  
-> **Deploy en Producción (Vercel):** [https://dwfe-g2-tp-2.vercel.app](https://dwfe-g2-tp-2.vercel.app)
+> **Deploy en Producción (Vercel):** [https://dwfe-g2-tp-22.vercel.app](https://dwfe-g2-tp-2.vercel.app)
 
 ---
 

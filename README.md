@@ -19,7 +19,7 @@ Aplicación web Single Page Application (SPA) desarrollada con **React** y **Vit
 8. [Instrucciones de Instalación y Ejecución Local](#-instrucciones-de-instalación-y-ejecución-local)
 9. [Capturas de Pantalla](#-capturas-de-pantalla)
 
-** NOTA: El formulario FUNCIONA. Sólo debe usar una cuenta de correo válida (es decir que pueda chequear) para recibir una respuesta.**
+**NOTA: El formulario FUNCIONA. Sólo debe usar una cuenta de correo válida (es decir que pueda chequear) para recibir una respuesta.**
 ---
 
 ## 🎯 Descripción del Proyecto
